@@ -1,0 +1,59 @@
+\documentclass{classes/SIT-Report-EN}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{tabularray}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+\usepackage{filecontents}
+\useunder{\uline}{\ul}{}
+ 
+%%Edit your info Here
+\begin{document}
+\title{PLANADAY : SUGGEST ONE DAY TRIP APPLICATION}
+\degree{Bachelor of Science}
+\majorProgramEN{Computer Science}
+\academicyear{2024}
+
+\author{Mr. Sitiporn Wimolpunyakul}
+\authorTwo{MS. Kanyarant Premprapapong}
+\authorThree{MS. Thanakorn Chotthanigarn}
+
+\majoradvisor{Asst.Prof. Worarat Krathu}
+% \coadvisor{Dr. Watanyoo Suksa-ngaim Ph.D}
+\committeeOne{Dr. Watanyoo Suksa-ngiam}
+\committeeTwo{Dr. Vithida Chongsuphajaisiddhi}
+\academicyear{2024}
+
+%%%%%%%%%%
+\maketitle
+\frontmatter
+\maketitleinner
+\makeapproval
+\input{pages/abstract} %%Edit your Abstract
+\input{pages/acknowledgements} %% %%Edit your Acknowledgement
+
+\tableofcontents
+\listoftables
+\listoffigures
+%\input{pages/symbols}
+%\input{pages/abbreviations}
+
+\mainmatter
+%%insert your content
+\input{chapter1/chapter1}
+\input{chapter2/chapter2}
+\input{chapter3/chapter3}
+\input{chapter4/chapter4}
+\input{chapter5/chapter5}
+
+\bibliographystyle{plain}
+\bibliography{references/references}
+\addcontentsline{toc}{chapter}{REFERRENCES}
+
+\end{document}
