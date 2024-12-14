@@ -1,25 +1,5 @@
-# CS SIT KMUTT TravelKit Thesis
+# CS SIT KMUTT PLanADay Thesis
 CS SIT KMUTT Thesis with LaTeX
-
-## Install Xetex
-
-### Ubuntu
-```
-$ sudo apt install texlive-xetex
-```
-
-### Using TeXstudio on Mac
-
-Download TeXstudio https://www.texstudio.org/
-
-Download MacTex ```brew install --cask mactex```
-
-### Windows
-
-~~Dowload MiKTeX~~ https://miktex.org/download ❌
-
-Or buy a Macbook https://www.apple.com/shop/buy-mac/macbook-pro ✅ and do the instruction for Mac above 👆🏻
-
 
 ## Install font TH Sarabun New
 Font inside classes folder.
@@ -55,5 +35,3 @@ Open setting.json then add this
 ```
 
 ## Example Page
-
-![FrontPage](/readme/example_frontpage.png "FrontPage")
