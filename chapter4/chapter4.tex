@@ -1,17 +1,17 @@
 \chapter{System functionality}
 \section{Introduction}
-This chapter describes the core aspects of the system's functionality, covering its system architecture, primary functions, planning, and testing results that defined the application's capabilities. The first part covers the architecture of the system in this project and the second part covers the main functionality of the system.
-\section{System architecture}
+This chapter describes the system architecture, the plan, and the test result. First, the chapter begins with the system architecture which consists of the system functionality and main functions. The system functionality describes the components of the system and the overall structure of the system. The main function section describes all the functions in the system. Lastly, the test plan and the results explain the processes and procedures used for testing the system.
+\section{4.2 System architecture}
 
 \begin{figure}[!h]
     \centering
     \includegraphics[width=1\linewidth]{chapter4/sysarch.png}
     \caption{System architecture}
-    \label{fig:System architecture}
+    \label{Figure 4-1. System architecture}
 \end{figure}
-The system will consist of two main components. The first component is frontend, the user-interaction part written as Flutter application which has functionalities of login, using Google OAuth API and has the map preview for user to search for places and navigate through routes. It will have to retrieve raw location data from the device GPS and call to backend using REST API. The second component is backend, which consists of the data manipulation and algorithmic part, which written using Golang. The backend use for retrieve route request from frontend, then All the connections between frontend and backend are proxies trough Cloudflare and internal NGINX reverse proxy. For the backend process, we use MariaDB for relational data store, Neo4j \cite{neo4j} for graph data store, The maps library, Google Maps API and self-hosted OSRM API, is used gather places, routes and any geographic information.
+The PlanADay software architecture employs a client-server model, with the frontend handling user interaction through screens and forms, and the backend managing core logic, API integrations, and database operations. The frontend allows users to create plans, customize them, or authenticate via registration and login, sending input to the backend for processing. The backend retrieves data from external APIs like Google Places, caches it for efficient reuse, verifies user credentials using token-based authentication, and stores user data securely. This architecture prioritizes separation of concerns, efficiency through caching, and security, ensuring a scalable and user-friendly system for generating and customizing plans.
 
-\section{Main function}
+\section{4.3 Test Plan}
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.5\linewidth]{chapter4/welcome_screen.png}
@@ -59,24 +59,6 @@ The recommended routes can be sorted according to the user's preferences, such a
 \newpage
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.5\linewidth]{chapter4/arrival_alert_screen.png}
-	\caption{Arrival alert options}
-	\label{fig:Arrival alert options}
-\end{figure}
-There are alerts that can be set when users are nearing the transfer point or the destination which help them reach their destination accurately.
-
-\newpage
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.5\linewidth]{chapter4/selected_route_screen.png}
-	\caption{Selected route screen}
-	\label{fig:Selected route screen}
-\end{figure}
-Users will see the details of the selected route on the map once they select a route from the search route results. From the starting point to the destination, the route polyline is color-coded separately.
-
-\newpage
-\begin{figure}[!h]
-	\centering
 	\includegraphics[width=0.5\linewidth]{chapter4/selected_route_detail_screen.png}
 	\caption{Selected route detail screen}
 	\label{fig:Selected route detail screen}
@@ -91,24 +73,6 @@ After swiping up the bottom sheet, users will see the details of the selected ro
 	\label{fig:Real-time navigation screen}
 \end{figure}
 This screen shows the details of the route in real-time including the current location, estimated arrival time, and the navigation overlay showing the current step with time and the next step at the top of the screen.
-
-\newpage
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.5\linewidth]{chapter4/share_route_screen.png}
-	\caption{Share route screen}
-	\label{fig:Share route screen}
-\end{figure}
-When users tap the Share button, they will receive the generated code and be able to share the code with others without having to search for the route again. 
-
-\newpage
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.5\linewidth]{chapter4/community_screen.png}
-	\caption{Community screen}
-	\label{fig:Community screen}
-\end{figure}
-This figure shows the suggested places, which are sorted by how often they are searched, and users can search routes based on the code that is generated by others that will navigate them to the shared routes.
 
 \newpage
 \section{Test plan and test result}
@@ -143,6 +107,6 @@ This figure shows the suggested places, which are sorted by how often they are s
 			& Able to navigate to suggested routes page from suggested places    & User navigates to the routes selection page correctly                                                                 & Success 
 		\end{tblr}
 	}
-	\caption{Test plan and result}
-	\label{Test plan and result}
+	\caption{Table 4-1. Test Plan}
+	\label{Table 4-1. Test Plan}
 \end{table}

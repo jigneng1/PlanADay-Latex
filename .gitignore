@@ -1,13 +1,48 @@
 .DS_Store
 
+# LaTeX intermediate and log files
 *.aux
 *.log
-*.lof
-*.lot
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
 *.toc
+*.vrb
 *.bbl
 *.blg
-*.out
-*.synctex*
-*.fbd_latexmk
-*.fls
+
+# Editor-specific files
+*.bak
+*.backup
+*.tmp
+*.swp
+*.swo
+*.DS_Store
+
+# Generated PostScript and EPS files
+*.ps
+*.eps
+
+# TeXShop or TeXworks specific files
+*.texpadtmp
+*.pdfsync
+
+# Generated index and glossary files
+*.idx
+*.ilg
+*.ind
+*.glo
+*.gls
+*.ist
+
+# Miscellaneous
+*.lof
+*.lot
+*.lol
+*.brf
+*.lox
+*.glg
+*.synctex(busy)
