@@ -57,7 +57,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Page layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{secnumdepth}{3} 
 \setcounter{tocdepth}{2} 
-\geometry{left=40mm,top=30mm,bottom=20mm,right=20mm} %% Page Margin 
+\geometry{left=30mm,top=30mm,bottom=20mm,right=30mm} %% Page Margin 
 
 \titleformat{\chapter}[display]{\bfseries\Large}
 {\filcenter\chaptertitlename~\thechapter}

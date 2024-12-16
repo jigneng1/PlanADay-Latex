@@ -88,6 +88,7 @@ type, location, date and time and amount of places, The system will generate the
 display it to the user. if the user is not satisfied they can customize the plan by rearrange,
 regenerate. The suggestion plans will show the public plans that mean each plan is shared by
 other users. and filter the plan by user preferences.
+
 \newpage
 \subsection{Context diagram}
 \begin{figure}[!h]
@@ -121,11 +122,12 @@ account, the login screen allows them to authenticate. The backend verifies the 
 using a token. If the token is valid, the user is granted access to the home screen. In the event of
 an invalid token, authentication fails. This flow ensures a secure and user-friendly mechanism
 for handling account creation and login.
+
 \newpage
 Generate Plan Process
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=1\linewidth]{chapter3/generate-process.png}
+    \includegraphics[width=0.5\linewidth]{chapter3/generate-process.png}
     \caption{Activity Diagram of Generate Plan Process}
     \label{fig:Activity Diagram of Generate Plan Process}
 \end{figure}
@@ -138,9 +140,10 @@ client. After the plan is displayed, the user has the option to customize it. If
 the backend regenerates the plan using the cached data without making additional API calls. If
 no customization is needed, the process ends. This workflow ensures efficiency through caching
 and provides a seamless user experience for generating personalized plans.
+
 \newpage
 \subsection{User Interface Design}
-
+\vspace{1cm}
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.5\linewidth]{chapter3/UI_Login_page.png}
@@ -177,7 +180,7 @@ preferences in this page and it will be used to suggest the plan in the system.
 \newpage
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=1\linewidth]{chapter3/UI_Home_page.png}
+    \includegraphics[width=0.5\linewidth]{chapter3/UI_Home_page.png}
     \caption{Home Page}
     \label{fig:Home Page}
 \end{figure}
