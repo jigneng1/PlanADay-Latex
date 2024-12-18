@@ -137,6 +137,7 @@
 	\@starttoc{toc}
 	\endgroup
 	\renewcommand{\ContentsHeaderContinued}{}
+	\renewcommand\bibname{REFERENCES}
 }
 
 

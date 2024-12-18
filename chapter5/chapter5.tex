@@ -1,18 +1,74 @@
 \chapter{Summary and suggestions}
-\section{Introduction}
-This chapter provides a summary of the project, which comprises three parts: project summary, problems encountered and solutions, and suggestions for further development. The first section summarizes and provides the overall results of the project. The second section outlines the problems encountered and proposes solutions to the limitations of the project. Finally, suggestions are provided for the future improvement of the project.
-
-\section{Project summary}
-TravelKit is a mobile application that assists individuals in navigating through public transportation options like buses, sky trains, subways, boats, and mini trucks to reach their desired destinations. Users can access information such as pricing, travel duration, and the number of transfers involved in their chosen route. Additionally, the application includes a feature enabling users to share their routes with one another. From the project’s objective and scope, we can create a software that can calculate travel routes, distances, and estimate travel costs with optimizing the suggested routes based on user personal choices.
+\section{Project Sumary}
+PlanADay Application: Personalized One-Day Trip Planning System is a mobile application that
+assists users in creating custom itineraries through three key types of suggestions: based on user
+interests, you might be interested, and location-based recommendations. The definitions of each
+suggestion are explained below.\vspace{1cm} \\
+\textbf{Plan Customization:} \\
+The system recommends locations that match the user’s stated preferences, such as cafes, parks,
+restaurants, museums, gyms, shopping, etc. Using the user's input, including starting location,
+preferred starting date and time, and desired number of stops. PlanADay generates a complete
+itinerary. This feature ensures that the trip plan aligns closely with the user’s interests while
+exploring nearby attractions that they have not visited before. \vspace{1cm} \\
+\textbf{Completed Plans Shared by Others:} \\
+This suggestion feature analyzes the user’s interests and bookmarked plans from other users to
+recommend similar places they might enjoy. For instance, if a user sets their interests as cafes
+and shopping, the system suggests completed plans shared by other users in the application that
+align with these interests. This helps users discover new places and plans while ensuring the
+recommendations remain relevant to their preferences.\par
+With these features, PlanADay enables users to explore new destinations, enjoy tailored
+itineraries, and make the most out of their one-day trips. It provides a seamless blend of
+personalization, discovery, and flexibility.
+\newpage
 
 \section{Problems encountered and solutions}
-There are two main problems that we encountered during the project. First problem that we find difficult to cope with is the process of developing mobile application that uses Dart with Flutter as a programming language and framework that we are not quite familiar with. So, we need to learn some new programming styles for the development. The second challenge involves incorporating Neo4j as a graph database, a tool with which we lack prior implementation experience. Consequently, we must familiarize ourselves with the database's query language in order to effectively build our system.
+We encountered some problems during the mobile application development phase, and some
+issues took time and effort to solve. The problems encountered and solutions will discuss as
+follow:
+\subsection{Location fetching issue}
+In our system design, we rely on the Google Maps API to fetch location data, as it provides a
+comprehensive and reliable source of geolocation information worldwide. However, during
+implementation, we encountered a significant challenge: the cost associated with using the
+Google Cloud Platform (GCP). GCP requires users to subscribe and potentially incur charges to
+access their resources, including the Google Maps API. Since cost-efficiency is a priority for us,
+we explored ways to minimize expenses while maintaining functionality. After thorough
+research, we discovered that Google Cloud Platform offers a \$300 free credit to new users. This
+credit can be utilized without being charged unless the account is upgraded to a fully paid
+subscription. By strategically registering and using this free credit, we temporarily mitigated the
+cost barrier. This approach allows us to proceed with development and testing without incurring
+immediate expenses. However, this solution is only temporary, and we recognize the need to plan
+for long-term sustainability by either optimizing API usage or exploring alternative solutions.
+Furthermore, to minimize API call costs, we are considering strategies caching frequently
+accessed location data and reducing redundant API calls. These measures aim to reduce
+dependency on external APIs and limit the associated expenses.
+
+\subsection{Data storage}
+The main challenge with storing location data is managing the large volume of information
+fetched during the planning process. Continuously saving every fetched or edited location to the
+database would consume excessive storage and increase costs unnecessarily. To address this, we
+use a temporary cache to store fetched location data. Users can edit, add, or delete locations in
+the cache during the planning phase. Only the finalized plan, once submitted by the user, is
+stored in the database. This approach minimizes storage usage, reduces database overhead, and
+ensures only relevant data is saved. The cache is also periodically cleared to free up memory.
 
 \newpage
 \section{Suggestions for further development}
-\subsection{Integration of AI in our system}
-Currently, our application has a feature that suggest routes based on the users preferences but we can use artificial intelligence to enhance this feature by collecting data from user. We can use that data to predict what sorting preferences user is likely to choose. Furthermore, we can suggest more accurate recommended places to user if we have a proper ai model.
-\subsection{Responsive design and implementation}
-Currently, our application is working correctly with only certain devices. To support wide variety of mobile and desktop screens, it need revisions in design and implementation to support  the responsive design.
-\subsection{High coupling of the data}
-Currently, our service has accurate data that we can return route data correctly, but to modify route data, we need to update both in the MongoDB and Neo4j separately which is consequence of manually inserting data to all databases and all relation in Neo4j needs to changed for the updated route.
+\begin{table}[]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+    \rowcolor[HTML]{C0C0C0} 
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{C0C0C0}\textbf{Suggestion}} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} \textbf{Details}}}   
+    Authentication                                                    & \begin{tabular}[c]{@{}l@{}}Enhance the sign-in and sign-up processes by integrating Gmail\\ validation, moving beyond the basic username and password\\ approach. This feature ensures a more secure and reliable\\ authentication process for users. Additionally, incorporate\\ third-party authentication options, such as Google, Facebook, and\\ other social media platforms, to simplify the login process and\\ improve user convenience and also make account management\\ more accessible and efficient.\end{tabular} \\ \hline
+    Place Pool Expansion                                              & \begin{tabular}[c]{@{}l@{}}Efficient Filtering Algorithms: Use advanced filtering techniques\\ to optimize the matching process and make the most of the\\ existing pool before resorting to real-time fetching. And along\\ with dynamic data fetching and implementing a fallback\\ mechanism to fetch additional data in real-time when the pool\\ does not meet user requirements. This ensures that users always\\ receive relevant suggestions.\end{tabular}                                                              \\ \hline
+    Details and more options                                          & \begin{tabular}[c]{@{}l@{}}Enhance the detailed view of each place by providing cost\\ estimates and more specific filters. For example, food-related\\ locations can include details such as whether they are halal,\\ vegan, or vegetarian-friendly. These additions offer users more\\ clarity and enable them to customize their preferences more\\ effectively.\end{tabular}                                                                                                                                               \\ \hline
+    Recommendation Plan from others                                   & \begin{tabular}[c]{@{}l@{}}Introduce an interactive interface for users to engage with trip\\ plans recommended by others. Before publishing their plans,\\ users can add comments, share experiences, and provide feedback\\ on the plans they followed which can foster collaboration and\\ build a more engaging community within the application.\end{tabular}                                                                                                                                                              \\ \hline
+    Frontend \& Backend Code quality                                  & \begin{tabular}[c]{@{}l@{}}Apply other higher efficiency techniques to build the large-scale\\ recommendation system both frontend and backend.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+
+
+
